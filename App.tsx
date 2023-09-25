@@ -1,10 +1,14 @@
 import React from "react";
 import Routes from "./src/Navigations/Routes";
+import { Provider } from 'react-redux';
+import { persistor, store } from './src/Stores';
 
 function App(): JSX.Element {
 
   return (
-     <Routes />
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   );
 }
 

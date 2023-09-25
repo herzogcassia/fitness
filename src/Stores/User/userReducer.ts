@@ -16,3 +16,5 @@ const userReducer = (
             break;
     }
 }
+
+export default userReducer;
