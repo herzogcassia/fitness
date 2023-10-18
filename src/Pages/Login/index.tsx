@@ -1,10 +1,11 @@
-import { Text } from 'react-native'
+import {View } from 'react-native'
+import InputComponent from '../../Components/InputComponent/InputComponent'
 
 const Login = () => {
     return (
-        <Text>
-            Login
-        </Text>
+        <View style={{backgroundColor: 'pink', flex: 1}}>
+            <InputComponent />
+        </View>
     )
 }
 
