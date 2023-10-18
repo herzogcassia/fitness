@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
-import React from 'react'
+import React, { useReducer } from 'react'
 import Login from '../Pages/Login';
 import Home from '../Pages/Home';
+import userReducer from '../Redux/user/reducer';
 
 const LoginStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -32,11 +33,13 @@ const HomeStackScreen = () => (
 
 const Routes = () => {
 
-    const user = useSelector((state: any) => state.user)
+    const { currentUser } = useSelector((rootReducer: any )=> rootReducer.userReducer)
+    console.log("🚀 ~ file: Routes.tsx:37 ~ Routes ~ currentUser:", currentUser)
+
 
     return (
         <NavigationContainer>
-            {user.token ? <HomeStackScreen /> : <LoginStackScreen />}
+            {currentUser ? <HomeStackScreen /> : <LoginStackScreen />}
         </NavigationContainer>
     )
 }

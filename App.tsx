@@ -1,7 +1,7 @@
 import React from "react";
 import Routes from "./src/Navigations/Routes";
 import { Provider } from 'react-redux';
-import { persistor, store } from './src/Stores';
+import store from "./src/Redux/store";
 
 function App(): JSX.Element {
 
